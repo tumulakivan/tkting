@@ -23,9 +23,7 @@ const Header: React.FC = () => {
       <div className="sub-header">
         {!hide.includes(location.pathname) && (
           <div className="navbar">
-            <p onClick={() => navigate("/leaderboards")}>Leaderboards</p>
             <p onClick={() => navigate("/profile")}>Profile</p>
-            <p>Tasks</p>
           </div>
         )}
         <ThemeToggle />
