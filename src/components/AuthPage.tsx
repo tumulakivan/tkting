@@ -7,6 +7,7 @@ const AuthPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSignIn = () => {
+    {/* no proper auth for now, just frontend testing */}
     if (user.trim() === "" || password.trim() === "") {
       alert("All fields are required.");
       return;
