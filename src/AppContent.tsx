@@ -14,6 +14,7 @@ const AppContent: React.FC = () => {
   return (
     <>
       <Header />
+      {/* Change page height for profile page only */}
       <div className={`${isDynamicHeightPage ? "dynamic-content" : "content"}`}>
         <Routes>
           <Route path="/" element={<AuthPage />} />
