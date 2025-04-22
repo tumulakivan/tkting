@@ -2,10 +2,10 @@ import React from 'react';
 
 const Dashboard = () => {
   const students = [
-    { id: 1, name: 'Kent Abadiano', email: 'Kd@example.com', plan: 'Basic' },
-    { id: 2, name: 'Jivonz Dy', email: 'Jivonz@example.com', plan: 'Premium' },
-    { id: 3, name: 'Ivan Tumulak', email: 'Ivan@example.com', plan: 'Enterprise' },
-    { id: 4, name: 'John Earl', email: 'John@example.com', plan: 'Enterprise' },
+    { id: 1, name: 'Kent Abadiano', email: 'Kd@example.com', plan: 'Motorcycle' },
+    { id: 2, name: 'Jivonz Dy', email: 'Jivonz@example.com', plan: 'Car' },
+    { id: 3, name: 'Ivan Tumulak', email: 'Ivan@example.com', plan: 'Motorcycle' },
+    { id: 4, name: 'John Earl', email: 'John@example.com', plan: 'Car' },
   ];
 
   return (
@@ -18,7 +18,7 @@ const Dashboard = () => {
             <th style={{ padding: '16px', textAlign: 'left', border: '1px solid #e5e7eb' }}>#</th>
             <th style={{ padding: '16px', textAlign: 'left', border: '1px solid #e5e7eb' }}>Name</th>
             <th style={{ padding: '16px', textAlign: 'left', border: '1px solid #e5e7eb' }}>Email</th>
-            <th style={{ padding: '16px', textAlign: 'left', border: '1px solid #e5e7eb' }}>Plan</th>
+            <th style={{ padding: '16px', textAlign: 'left', border: '1px solid #e5e7eb' }}>Vehicle</th>
           </tr>
         </thead>
         <tbody>
@@ -32,12 +32,12 @@ const Dashboard = () => {
                   padding: '8px 12px',
                   borderRadius: '9999px',
                   backgroundColor: 
-                    student.plan === 'Basic' ? '#d1fae5' :
-                    student.plan === 'Premium' ? '#fef3c7' :
+                    student.plan === 'Motorcycle' ? '#d1fae5' :
+                    student.plan === 'Car' ? '#fef3c7' :
                     '#e0e7ff',
                   color: 
-                    student.plan === 'Basic' ? '#065f46' :
-                    student.plan === 'Premium' ? '#92400e' :
+                    student.plan === 'Motorcycle' ? '#065f46' :
+                    student.plan === 'Car' ? '#92400e' :
                     '#3730a3'
                 }}>
                   {student.plan}
