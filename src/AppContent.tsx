@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import AuthPage from "./components/AuthPage";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
+import Dashboard from "./components/Dashboard";
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<AuthPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} /> 
         </Routes>
       </div>
       <Footer />

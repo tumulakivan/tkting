@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="main-footer-section">
         <div className="billboard">
           <h1 className="footer-logo">
-            <span className="footer-logo-motif">T</span>kting
+            <span className="footer-logo-motif">T</span>tkting
           </h1>
           <h2 className="motto">Parking simplified.</h2>
         </div>

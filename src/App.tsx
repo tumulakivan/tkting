@@ -5,8 +5,8 @@ import AppContent from "./AppContent";
 
 function App() {
   return (
-    {/* Wrap app content in router */}
     <Router>
+      {/* Wrap app content in router */}
       <AppContent />
     </Router>
   );
