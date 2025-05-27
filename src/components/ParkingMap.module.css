@@ -1,0 +1,310 @@
+.parkingMap {
+  padding: 2rem;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: var(--sub);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: var(--main);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--textcolor);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4fab63, #61be75);
+  border-radius: 2px;
+  transform: scaleX(0.8);
+  transition: transform 0.3s ease;
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+}
+
+.errorMessage {
+  font-family: var(--sub);
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  animation: shake 0.5s ease-in-out;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.errorMessage::before {
+  content: "❌";
+  font-size: 1.2rem;
+}
+
+.parkingArea {
+  background-color: var(--element1);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.parkingArea:hover {
+  transform: scale(1.01);
+}
+
+.parkingArea h2 {
+  font-family: var(--main);
+  font-size: 1.75rem;
+  margin-bottom: 1.75rem;
+  color: var(--textcolor);
+  border-bottom: 2px solid var(--element2);
+  padding-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.parkingArea h2::before {
+  content: "🅿️";
+  font-size: 1.5rem;
+}
+
+.parkingSlots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.parkingSlot {
+  font-family: var(--sub);
+  background-color: var(--bgcolor);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
+  cursor: not-allowed;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.parkingSlot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.parkingSlot.clickable {
+  opacity: 1;
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+.parkingSlot.clickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.parkingSlot.clickable:hover::before {
+  transform: translateX(100%);
+}
+
+.parkingSlot.occupied {
+  background: linear-gradient(135deg, #dc3545, #ff4d5a);
+  color: white;
+}
+
+.parkingSlot.available {
+  background: linear-gradient(135deg, #4fab63, #61be75);
+  color: white;
+}
+
+.parkingSlot.userOccupied {
+  background: linear-gradient(135deg, #0d6efd, #3d8bfd);
+  color: white;
+  opacity: 1;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.slotId {
+  font-family: var(--main);
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.slotDetails {
+  font-family: var(--sub);
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.userInfo {
+  font-family: var(--sub);
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userInfo::before {
+  content: "👤";
+}
+
+.areaStats {
+  font-family: var(--sub);
+  margin-top: 1.5rem;
+  color: var(--textcolor);
+  opacity: 0.9;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bgcolor);
+  border-radius: 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.areaStats:hover {
+  opacity: 1;
+}
+
+.areaStats::before {
+  content: "📊";
+  font-size: 1.2rem;
+}
+
+/* Custom Scrollbar */
+.parkingMap::-webkit-scrollbar {
+  width: 10px;
+}
+
+.parkingMap::-webkit-scrollbar-track {
+  background: var(--bgcolor);
+  border-radius: 10px;
+}
+
+.parkingMap::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4fab63, #61be75);
+  border-radius: 10px;
+  transition: background 0.2s ease;
+  border: 2px solid var(--bgcolor);
+}
+
+.parkingMap::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #61be75, #4fab63);
+}
+
+/* For Firefox */
+.parkingMap {
+  scrollbar-width: thin;
+  scrollbar-color: #4fab63 var(--bgcolor);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .parkingMap {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .parkingSlots {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .parkingSlot {
+    min-height: 100px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parkingMap {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .parkingSlots {
+    grid-template-columns: 1fr;
+  }
+
+  .parkingArea {
+    padding: 1.5rem;
+  }
+}

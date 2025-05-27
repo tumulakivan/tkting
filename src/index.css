@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --bgcolor: #f1fffa;
+  --rest: #568259;
+  --interact: #3c5c3e;
+  --textcolor: #303632;
+  --main: "Baloo 2", sans-serif;
+  --sub: "Rubik", sans-serif;
+
+  /* assets here */
+  --restedsun: url("/src/assets/icons8-sun-100.png");
+  --interactedsun: url("/src/assets/icons8-sun-100-hovered.png");
+  --restedmoon: url("/src/assets/icons8-moon-100.png");
+  --interactedmoon: url("/src/assets/icons8-moon-100-hovered.png");
+}
+
+.dark {
+  --bgcolor: #141414;
+  --rest: #4fab63;
+  --interact: #8ab48d;
+  --textcolor: #f1fffa;
+  --element1: #0a0a0a;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: var(--main);
+}
+
+body {
+  background-color: var(--bgcolor);
+  color: var(--textcolor);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  height: 100vh;
+  overflow-x: hidden;
+}

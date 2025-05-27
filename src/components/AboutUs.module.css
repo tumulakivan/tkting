@@ -1,0 +1,150 @@
+.aboutUs {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+  height: calc(100vh - 120px); /* Account for header/footer */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: var(--bgcolor);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-family: var(--main);
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: var(--textcolor);
+}
+
+.subtitle {
+  font-family: var(--sub);
+  font-size: 1rem;
+  color: var(--rest);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: fit-content;
+}
+
+.teamMember {
+  background: var(--bgcolor);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+}
+
+.memberImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.memberInfo {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.memberName {
+  font-family: var(--main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--textcolor);
+}
+
+.memberRole {
+  font-family: var(--sub);
+  color: var(--rest);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.memberBio {
+  font-family: var(--sub);
+  color: var(--textcolor);
+  line-height: 1.4;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.contribution {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rest);
+}
+
+.contribution h4 {
+  font-family: var(--main);
+  color: var(--textcolor);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.contribution ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contribution li {
+  font-family: var(--sub);
+  color: var(--textcolor);
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contribution li::before {
+  content: "•";
+  color: var(--rest);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
