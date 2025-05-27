@@ -8,7 +8,7 @@ interface User {
   idNumber: string;
   firstName: string;
   lastName: string;
-  type: string;
+  type: "Student" | "Staff" | "Admin";
   password?: string;
   parkingSlot?: null;
 }
