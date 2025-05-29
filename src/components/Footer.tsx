@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="sub-footer">
-        <p className="copyright">© 2025, Ivan Tumulak.</p>
+        <p className="copyright">© 2025, Ivan Tumulak</p>
       </div>
     </div>
   );
