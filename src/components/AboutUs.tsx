@@ -9,7 +9,7 @@ const AboutUs: React.FC = () => {
     "As the sole developer of the Tkting Parking Management System, I handled both frontend and backend development, ensuring the project met performance, usability, and integration goals.";
 
   const contributions = [
-    "Built the fullstack application using React, TailwindCSS, and Spring Boot",
+    "Built the fullstack application using React, Spring Boot and PostgreSQL",
     "Designed and implemented the user interface and component logic",
     "Created the backend API and integrated MySQL using Supabase",
     "Handled authentication, real-time updates, and deployment (Render & Vercel)",
